@@ -1,5 +1,4 @@
 FROM openjdk:8
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/test-controller-example 0.0.1-SNAPSHOT.jar jenkins-docker-integration.jar
+ENTRYPOINT ["java","-jar","/jenkins-docker-integration.jar"]
